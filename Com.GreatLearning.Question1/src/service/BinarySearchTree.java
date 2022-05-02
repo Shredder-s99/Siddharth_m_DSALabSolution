@@ -36,7 +36,7 @@ public class BinarySearchTree {
 
     public boolean checkSum(Node root,int sum){
         boolean flag = false;
-        if(root!=null){
+       /* if(root!=null){
             System.out.print("Values "+root.key);
         }
         if(root.left!=null){
@@ -44,8 +44,7 @@ public class BinarySearchTree {
         }
         if (root.right!=null){
             System.out.println("Values "+root.right.key);
-        }
-        //+" "+root.left.key+" "+ root.right.key);
+        }*/
         while(root != null && flag == false){
             if((root.left!=null) && (root.key +root.left.key) == sum){
                 flag = true;
@@ -64,10 +63,11 @@ public class BinarySearchTree {
             }
             else if(!flag && root.right!=null){
                 flag=checkSum(root.right,sum);
+                if(!flag && root.left!=null){
+                    flag = checkSum(root.left,sum);
+                }
             }
-            else if(!flag && root.left!=null){
-                flag = checkSum(root.left,sum);
-            }
+
 
             return flag;
         }

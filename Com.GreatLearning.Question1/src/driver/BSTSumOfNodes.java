@@ -13,7 +13,7 @@ public class BSTSumOfNodes {
         tree.insert(30);
         tree.insert(50);
         tree.insert(70);
-        if (!tree.checkSum(tree.root,50)){
+        if (!tree.checkSum(tree.root,1100)){
             System.out.println("\n Pair not found");
         }
 
